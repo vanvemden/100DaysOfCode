@@ -11,15 +11,16 @@
  * - Space complexity: O(1)
  */
 function isPalindrome(string) {
-  // pointer to calculate left and right character index
-  let pointer = 0;
-  let length = string.length;
-  // iterate while more than 1 character not compared
-  while (length - pointer * 2 > 1) {
-    // check if characters at left and right index match
-    if (string[pointer] !== string[length - 1 - pointer]) return false;
-    // move pointer to next characters
-    pointer++;
+  // pointer to calculate left/right char index
+  let ptr = 0;
+  let len = string.length;
+  // loop while more than 1 char to compare
+  while (len - ptr * 2 > 1) {
+    // if left/right pointer chars don't match; no palindrome
+    if (string[ptr] !== string[len - 1 - ptr]) return false;
+    // continue; move pointer to next left/right char
+    ptr++;
   }
+  // all left/right chars match; is palindrome
   return true;
 }
